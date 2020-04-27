@@ -36,7 +36,7 @@ for l=1:size(lambda,2)
             semTT = std(TT) ./ sqrt(nTT); 
 
 
-            disp([meanPL, 1.645*semPL, meanAPD, 1.645*semAPD, meanAPD, 1.645*semAPD, meanMPD, 1.645*semMPD, meanTT, 1.645*semTT])
+            disp([meanPL, 1.645*semPL, meanAPD, 1.645*semAPD, meanMPD, 1.645*semMPD, meanTT, 1.645*semTT])
             
         end
     end
