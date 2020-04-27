@@ -9,7 +9,7 @@ for l=1:size(w,2)
         for F = 1:size(F,2)
             result = [];
             for i = 1:10
-                result = Simulator1(lambda(l),C(c),F(f),P(p))
+                result = Simulator1(lambda(l),C(c),F(f),P)
             end
         end
     end
