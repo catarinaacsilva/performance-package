@@ -25,7 +25,7 @@ function avg = mg1(c, l)
     es = (1/(c/b));
     esQ = es^2;
 
-    avg = (l*esQ)/(2(1-l*es));
+    avg = (l*esQ)/(2(1-l*es))+es;
     
 end
 
