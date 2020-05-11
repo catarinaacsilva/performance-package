@@ -8,20 +8,19 @@ P = 100000;
 
 s = 10; % Number of Simulations
 
-% Packet Loss results
-
-
+% aPL: Packet Loss results (PL); 
+% aAD: Average and the Maximum Packet Delay results (APD); 
+% aTT: Transmitted Throughput results (TT)
 
 for l = 1:size(lambda, 2)
     for i = 1:s
         [PL , APD , MPD , TT] = Simulator1(lambda(l),2,10000,P);
+        aPL = [aPL PL];
+        aAD = [aAD APD];
+        aTT = [aTT TT];
     end
 end
 
-% Average and the Maximum Packet Delay results
-
-
-% Transmitted Throughput results
 
 
 
