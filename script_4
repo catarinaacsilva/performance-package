@@ -1,0 +1,19 @@
+% Average values of the performance parameters - m/m/1/m
+% ------------------------------------------------------------------------------------------------------------
+
+C = 2;
+F = 10000;
+lambda = [50 100 150 200 250 270 290 310 330 350 400 450 500];
+P = 100000;
+
+% Packet Loss results
+
+
+% Average and the Maximum Packet Delay results
+
+
+% Transmitted Throughput results
+
+
+
+
