@@ -16,7 +16,7 @@ s = 10; % Number of Simulations
 
 for l = 1:size(lambda, 2)
     for i = 1:s
-        [PL , APD , MPD , TT] = Simulator1(lambda(l),2,10000,P);
+        [PL , APD , MPD , TT] = Simulator1(lambda(l),C,F,P);
         aPL = [aPL PL];
         aAD = [aAD APD];
         aMD = [aMD MPD];
