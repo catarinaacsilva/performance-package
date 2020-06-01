@@ -14,7 +14,12 @@ s = 10; % Number of Simulations
 % aMPD: Maximum Packet Delay results (MPD);
 % aTT: Transmitted Throughput results (TT)
 
+rs=[];
 for l = 1:size(lambda, 2)
+    aPL = [];
+    aAD = [];
+    aMD = [];
+    aTT = [];
     for i = 1:s
         [PL , APD , MPD , TT] = Simulator1(lambda(l),C,F,P);
         aPL = [aPL PL];
@@ -22,6 +27,10 @@ for l = 1:size(lambda, 2)
         aMD = [aMD MPD];
         aTT = [aTT TT];
     end
+    rs(l,1) = mean(aPL);        % Packet Loss (%)
+    rs(l,2) = mean(aAD);        % Average Packet Delay (milliseconds)
+    rs(l,3) = mean(aMD);        % Maximum Packet Delay (milliseconds)
+    rs(l,4) = mean(aTT);        % Transmitted Throughput (Mbps)
 end
 
 

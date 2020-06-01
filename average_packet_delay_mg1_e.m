@@ -1,11 +1,11 @@
 L = [100, 200, 500, 1000];
-C = [2, 10];
+C = [2*10^6, 10*10^6];
 
 
 for l=1:size(L,2)
     W = [];
     for c = 1:size(C,2)
-        [w] = mg1(c,l)
+        w = mg1(C(c),L(l)) * 1000;
         W = [W;w];
     end
     disp = (W)
@@ -24,9 +24,9 @@ function avg = mg1(c, l)
     b2 = (p0*n0)^2 + (p1*n1)^2 + (p2*n2)^2;
 
     es = (1/(c/b));
-    esQ = (1/(c/b2));
+    esQ = (1/(c^2/b2));
 
-    avg = (l*esQ)/(2(1-l*es))+es;
+    avg = (l*esQ)/(2*(1-l*es))+es;
     
 end
 
