@@ -5,7 +5,7 @@ C = [2*10^6, 10*10^6];
 for l=1:size(L,2)
     W = [];
     for c = 1:size(C,2)
-        w = mm1(C(c),L(l)) * 1000
+        w = mm1(C(c),L(l));
         W = [W;w];
     end
     disp = (W)
@@ -17,10 +17,13 @@ function avg = mm1(c, l)
     p2 = 0.62;
     n0 = 64*8;
     n1 = 1518*8;
-    n2_aux = (1517+65)/2;
-    n2 = n2_aux*8;
+    
+    n = 1518-65;
+    
+    b = p0*n0 + p1*n1;
+    for i = 65:1517    
+        b = b + (p2/n * (i * 8));
+    end
 
-    b = p0*n0 + p1*n1 + p2*n2;
-
-    avg = 1/((c/b)-l);
+    avg = 1/((c/b)-l) * 1000;
 end
